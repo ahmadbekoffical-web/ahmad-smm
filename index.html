@@ -1,1 +1,191 @@
 
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahm4d SMM VIP</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #070b14;
+      color: white;
+      min-height: 100vh;
+    }
+
+    .header {
+      padding: 28px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #0b1224, #111d3d);
+      border-bottom: 1px solid #1e3a70;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      color: #35a7ff;
+    }
+
+    .vip {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #162d52;
+      color: #63bdff;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .welcome {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .welcome h1 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .welcome p {
+      color: #9ba8bd;
+    }
+
+    .card {
+      background: #0e1525;
+      border: 1px solid #1c3155;
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #9ba8bd;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 12px;
+      background: #168cff;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #0876dc;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 25px;
+      color: #68758a;
+      font-size: 13px;
+    }
+
+    .premium {
+      border: 1px solid #168cff;
+      box-shadow: 0 0 20px rgba(22, 140, 255, 0.12);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="logo">Ahm4d SMM</div>
+    <div class="vip">⭐ VIP PANEL</div>
+  </div>
+
+  <div class="container">
+
+    <div class="welcome">
+      <h1>VIP SMM xizmatlari</h1>
+      <p>Tezkor, qulay va ishonchli xizmatlar</p>
+    </div>
+
+    <div class="card premium">
+      <h3>📸 Instagram</h3>
+      <p>Followers, Likes, Views va boshqa xizmatlar.</p>
+      <button class="btn" onclick="order('Instagram')">
+        Buyurtma berish
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>✈️ Telegram</h3>
+      <p>Kanal va postlar uchun SMM xizmatlari.</p>
+      <button class="btn" onclick="order('Telegram')">
+        Buyurtma berish
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>▶️ YouTube</h3>
+      <p>Video ko‘rishlar va boshqa xizmatlar.</p>
+      <button class="btn" onclick="order('YouTube')">
+        Buyurtma berish
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🎵 TikTok</h3>
+      <p>Video ko‘rishlar, layklar va boshqa xizmatlar.</p>
+      <button class="btn" onclick="order('TikTok')">
+        Buyurtma berish
+      </button>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    © 2026 Ahm4d SMM — VIP Panel
+  </div>
+
+  <script>
+    function order(service) {
+      alert(
+        service +
+        " xizmati tanlandi.\n\n" +
+        "Buyurtmani Telegram bot orqali davom ettiring."
+      );
+
+      if (window.Telegram && Telegram.WebApp) {
+        Telegram.WebApp.sendData(
+          JSON.stringify({
+            service: service
+          })
+        );
+      }
+    }
+
+    if (window.Telegram && Telegram.WebApp) {
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+    }
+  </script>
+
+</body>
+</html>
